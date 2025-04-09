@@ -83,6 +83,46 @@ Text2Img/
 4. 点击图片可全屏查看
 5. 点击"下载图片"按钮将图片保存到相册
 
+## 构建APK
+
+### 方法一：使用Android Studio
+
+1. 打开Android Studio并加载项目
+2. 点击顶部菜单栏的`Build`
+3. 选择`Build Bundle(s) / APK(s)`
+4. 选择`Build APK(s)`
+5. 等待构建完成，Android Studio会显示通知
+6. 点击通知中的`locate`可找到生成的APK文件，通常在`app/build/outputs/apk/debug/`目录下
+
+### 方法二：使用命令行
+
+在项目根目录下执行以下命令：
+
+```bash
+# 在macOS/Linux系统
+./gradlew assembleDebug    # 构建Debug版本APK
+./gradlew assembleRelease  # 构建Release版本APK（需要签名配置）
+
+# 在Windows系统
+gradlew.bat assembleDebug    # 构建Debug版本APK
+gradlew.bat assembleRelease  # 构建Release版本APK（需要签名配置）
+```
+
+构建完成后，APK文件位置：
+- Debug版本：`app/build/outputs/apk/debug/app-debug.apk`
+- Release版本：`app/build/outputs/apk/release/app-release.apk`
+
+### 构建Release版本APK
+
+要构建发布版本的APK（可发布到应用商店的版本），需要进行签名配置：
+
+1. 在Android Studio中，点击顶部菜单的`Build` -> `Generate Signed Bundle / APK`
+2. 选择`APK`
+3. 创建或选择已有的密钥库(keystore)文件
+4. 填写密钥库密码、密钥别名和密钥密码
+5. 选择APK目标文件夹，并选择构建类型（通常选择release）
+6. 点击`Finish`开始构建
+
 ## 技术栈
 
 - Kotlin: 主要开发语言
