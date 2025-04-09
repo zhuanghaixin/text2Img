@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity() {
     private val client = OkHttpClient()
     
     private val TAG = "MainActivity"
-    private val COZE_TOKEN = "pat_STXwVi1Oftb1Ds290APrxNCUmjkk1EWAHqalA1LqthfWr0aCvd0D9b9XdVX15CFY"
-    private val WORKFLOW_ID = "7490858139598061618"
+    private val COZE_TOKEN = "your_coze_token_here"
+    private val WORKFLOW_ID = "your_workflow_id_here"
     private val COZE_API_URL = "https://api.coze.cn/v1/workflow/run"
     
     // 保存当前图片URL
